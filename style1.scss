@@ -1,0 +1,339 @@
+/* Matilda Nilsson, matildanilsson4@hotmail.com */
+/*Variabels*/
+$font-body: 'Open Sans', sans-serif;
+$font-handwrite: 'Merienda One', cursive;
+$primary-background-color: #000316;
+$h1-color: #000316;
+$h2-color: #000316;
+$h3-color: white;
+$nav-text-color: #FFFFFF;
+$nav-hover-text-color: #DCD0C0;
+$card-width: 25vw;
+/*Distance*/
+$distance-between-cards: 40px;
+$padding-inside-cards: 60px;
+/*Media query*/
+$width-name: max-device-width;
+$target-width: 650px;
+
+body {
+  /*================================= GENERAL =================================*/
+  margin: 0;
+  background-color: $primary-background-color;
+  width: 100%;
+  /*Headings*/
+  h1 {
+    font-family: $font-handwrite;
+    color: $h1-color;
+  }
+
+  h2 {
+    font-family: $font-body;
+    color: $h2-color;
+  }
+
+  h3 {
+    font-family: $font-handwrite;
+    color: $h3-color;
+  }
+  /*Primary text*/
+  p {
+    font-family: $font-body;
+    font-size: 14px;
+    color: #000316;
+    line-height: 1.5em;
+  }
+
+  a {
+    font-family: $font-body;
+    font-size: 16px;
+  }
+  /*================================ STARTPAGE ================================*/
+  /* NAVMENY */
+  .nav {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    justify-content: flex-end;
+    background: $primary-background-color;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 10px 30px;
+
+      a {
+        color: $nav-text-color;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $nav-hover-text-color;
+      }
+    }
+  }
+
+  .startpage_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    /* Introduction */
+    .row_1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 8vw;
+      background-color: white;
+      width: 68%;
+
+      img {
+        height: 40% !important;
+        width: 40% !important;
+      }
+
+      .textbox {
+        display: flex;
+        flex-direction: column;
+        margin-left: 25px;
+        padding-right: 35px;
+        text-align: justify;
+        h1 {
+          font-size: 45px;
+          color: black;
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+
+        p {
+          margin-top: 0;
+          color: black;
+        }
+      }
+    }
+
+    .row_2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+
+      .row_2_1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        text-align: center;
+
+        img {
+          margin-top: 30px;
+          width: 20%;
+        }
+      }
+    }
+  }
+  /*================================ PROJECTS ================================*/
+  .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    margin-bottom: 50px;
+
+    .row_1 {
+      display: flex;
+      flex-direction: row;
+      /*LOCO*/
+      .card_1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 2vw;
+        margin-top: $distance-between-cards;
+        transition: 0.3s;
+        background-color: white;
+        padding: $padding-inside-cards;
+        width: $card-width;
+
+        img {
+          height: auto;
+          width: 25vw;
+          opacity: 0.5;
+          filter: alpha(opacity=50);
+        }
+
+        img:hover {
+          opacity: 1.0;
+          filter: alpha(opacity=100);
+        }
+      }
+      /*MASH*/
+      .card_2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: $distance-between-cards;
+        transition: 0.3s;
+        background-color: white;
+        padding: $padding-inside-cards;
+        width: $card-width;
+
+        img {
+          height: 20vw;
+          width: auto;
+          opacity: 0.5;
+          filter: alpha(opacity=50);
+        }
+
+        img:hover {
+          opacity: 1.0;
+          filter: alpha(opacity=100);
+        }
+      }
+    }
+
+    .row_2 {
+      display: flex;
+      flex-direction: row;
+    }
+    /*Registreringsapp*/
+    .card_3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 2vw;
+      margin-top: $distance-between-cards;
+      transition: 0.3s;
+      background-color: white;
+      padding: $padding-inside-cards;
+      width: $card-width;
+
+      img {
+        height: auto;
+        width: 15vw;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+      }
+
+      img:hover {
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+      }
+    }
+    /*Bubbleroom*/
+    .card_4 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: $distance-between-cards;
+      transition: 0.3s;
+      background-color: white;
+      padding: $padding-inside-cards;
+      width: $card-width;
+
+      img {
+        height: auto;
+        width: 25vw;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+      }
+
+      img:hover {
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+      }
+    }
+  }
+  /*=============================== CONTACT ME ===============================*/
+  .contactMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5vw;
+
+    .row_2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      padding-top: 50px;
+
+      a {
+        text-align: center;
+        text-decoration: none;
+        color: $nav-text-color;
+
+        img {
+          height: 25% !important;
+          width: 25% !important;
+        }
+      }
+
+      a:hover {
+        color: $nav-hover-text-color;
+      }
+
+      .col_2_1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .col_2_2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .col_2_3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+  /*=================================== CV ===================================*/
+  .cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-bottom: 5vw;
+
+    a {
+      text-align: center;
+      width: 300px;
+    }
+
+    img {
+      height: 100% !important;
+      width: 100% !important;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    h3 {
+      color: #FFFFFF;
+    }
+  }
+}
