@@ -12,15 +12,11 @@ $card-width: 25vw;
 /*Distance*/
 $distance-between-cards: 40px;
 $padding-inside-cards: 60px;
-/*Media query*/
-$width-name: max-device-width;
-$target-width: 650px;
 
 body {
   /*================================= GENERAL =================================*/
   margin: 0;
   background-color: $primary-background-color;
-  width: 100%;
   /*Headings*/
   h1 {
     font-family: $font-handwrite;
