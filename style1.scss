@@ -48,8 +48,7 @@ body {
     font-family: $font-body;
     font-size: 16px;
   }
-  /*================================ STARTPAGE ================================*/
-  /* NAVMENY */
+  /*================================ NAVMENY ================================ */
   .nav {
     display: flex;
     flex-direction: row;
@@ -75,7 +74,7 @@ body {
       }
     }
   }
-
+  /*================================ STARTPAGE ================================*/
   .startpage_card {
     display: flex;
     justify-content: center;
@@ -120,19 +119,15 @@ body {
 
     .row_2 {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-around;
       flex-direction: row;
+      height: 500px;
+      width: auto;
 
-      a{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 10px;
-      }
-      img {
-        margin-top: 30px;
-        width: 20%;
+      .col_2 {
+        justify-content: space-around;
+        width: 40px;
+        padding: 25px 40px;
       }
     }
   }
@@ -253,6 +248,30 @@ body {
       }
     }
   }
+  /*=================================== CV ===================================*/
+  .cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-bottom: 2vw;
+
+    a {
+      text-align: center;
+      width: 300px;
+    }
+
+    img {
+      height: 100% !important;
+      width: 100% !important;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    h3 {
+      color: #FFFFFF;
+    }
+  }
   /*=============================== CONTACT ME ===============================*/
   .contactMe {
     display: flex;
@@ -309,30 +328,6 @@ body {
         margin-left: 20px;
         margin-right: 20px;
       }
-    }
-  }
-  /*=================================== CV ===================================*/
-  .cv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 50px;
-    margin-bottom: 5vw;
-
-    a {
-      text-align: center;
-      width: 300px;
-    }
-
-    img {
-      height: 100% !important;
-      width: 100% !important;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    h3 {
-      color: #FFFFFF;
     }
   }
 }
