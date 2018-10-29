@@ -5,8 +5,10 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style1.min.css">
-  <link rel="shortcut icon" href="pictures/shortcut.jpg">
+  <link rel="shortcut icon" href="shortcut.jpg">
   <link href="https://fonts.googleapis.com/css?family=Merienda+One|Open+Sans:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:100" rel="stylesheet">
   <title>Matilda Nilsson Portfolio</title>
 </head>
 
@@ -15,18 +17,18 @@
 <body>
   <div class="nav" id="nav">
     <ul>
+      <li><a href="#aboutMe">about me</a></li>
       <li><a href="#projects">projects</a></li>
-      <li><a href="#contactMe">contact me</a></li>
-      <li><a href="#cv">cv</a></li>
+      <li><a href="#contact">contact</a></li>
     </ul>
   </div>
 
-  <div class="startpage_card">
+  <div class="startpage_card" id="aboutMe">
     <div class="row_1">
       <img src="IMG_5627.jpeg" alt="Matilda">
       <div class="textbox">
-        <h1>Matilda Nilsson</h1>
-        <p><b>🎓 Master of Science Student</b> in Interaction Technology and Design</p>
+        <h1>Hi, I'm Matilda Nilsson</h1>
+        <p id="hi"><b>🎓 Master of Science Student</b> in Interaction Technology and Design</p>
         <p><br>
           Hi, I´m currently studying my fifth year at the Master of Science Program
           in Interaction Technology and Design at Umeå university. I want to work
@@ -56,73 +58,86 @@
 
   <!--============================PROJECTS=================================== -->
   <div class="projects" id="projects">
-    <h3>Click to find out more about each project</h3>
-    <div class="row_1">
+    <h3>Some of my recent projects</h3>
+    <div class="row">
       <!--LOCO-->
-      <div class="card_1" id="btn1">
-        <a href="https://docs.google.com/document/d/12mrTGaLRbK29rlSgom1WrJKgiahfSGcGFQTWfJS7NKI/edit?usp=sharing">
-            <img src="Loco.png" alt="PUMA-project">
-          </a>
-        <p>This fall I took a couse named Prototyping for mobile applications</p>
+      <div class="card">
+        <img src="Loco.png" alt="PUMA-project">
+        <div class="hidden_text">
+          <p><b>Role:</b> UX-designer<br><br>
+          Loco party is a web application that present rules of different kind of drinking games.
+          The purpose of this product is to enlighten the participants about how to play the
+          different drinking games and also to decrease discussions about agreeing with each other.
+            <br><br></p>
+            <a href="https://docs.google.com/document/d/12mrTGaLRbK29rlSgom1WrJKgiahfSGcGFQTWfJS7NKI/edit?usp=sharing">
+            <div class="readMore"><b>Read more...</b></div></a>
+        </div>
       </div>
 
       <!--MASH-->
-      <div class="card_2" id="btn2">
-        <a href="https://docs.google.com/document/d/1Cp07N5hM3jhz7YfzuzptJvGzOAKQEVknIK7iyNTbCBo/edit?usp=sharing">
-          <img src="tfsm-vt18.png" alt="TFSM-project">
-        </a>
-        <p>This fall I took a couse named Prototyping for mobile applications</p>
+      <div class="card">
+        <img src="tfsm-vt18.png" alt="TFSM-project">
+        <div class="hidden_text">
+          <p><b>Role:</b> UX-designer and developer<br><br>
+          MASH is a social platform to facilitate the process to find the right program or course.
+          After you have been accepted to a program/course will you find a personal schedule of
+          the classes etc. in the application.
+            <br><br></p>
+            <a href="https://docs.google.com/document/d/1Cp07N5hM3jhz7YfzuzptJvGzOAKQEVknIK7iyNTbCBo/edit?usp=sharing">
+            <div class="readMore"><b>Read more...</b></div></a>
+        </div>
       </div>
-    </div>
 
-    <!--Registreringsapp-->
-    <div class="row_2" id="btn3">
-      <div class="card_3">
-        <a href="https://docs.google.com/document/d/1JhLIPPigWbMscqqNr_HcbBuWUyy2-ySXrKYBx356IHM/edit?usp=sharing">
-          <img src="dbt-vt17.png" alt="DBT-project">
-        </a>
-        <p>This fall I took a couse named Prototyping for mobile applications</p>
+      <!--Registreringsapp-->
+      <div class="card" id="dbt">
+        <img src="dbt-vt17.png" alt="DBT-project">
+        <div class="hidden_text">
+          <p><b>Role:</b> UX-designer and developer<br><br>
+          This was an interesting project we developed together with a company.
+          Me and my four group members were aked to design and develop a service
+          where a user could register his presence
+            <br><br></p>
+            <a href="https://docs.google.com/document/d/1JhLIPPigWbMscqqNr_HcbBuWUyy2-ySXrKYBx356IHM/edit?usp=sharing">
+            <div class="readMore"><b>Read more...</b></div></a>
+        </div>
       </div>
 
       <!--Bubbleroom-->
-      <div class="card_4" id="btn4">
-        <a href="https://docs.google.com/document/d/1LmbT7LPli_nQN82bYzz7gn-PgYM6CQrbNO6y5V8pzbQ/edit?usp=sharing">
-          <img src="mdi-ht16.png" alt="Mdi-project">
-        </a>
-        <p>This fall I took a couse named Prototyping for mobile applications</p>
+      <div class="card">
+        <img src="mdi-ht16.png" alt="Mdi-project">
+        <div class="hidden_text">
+          <p><b>Role:</b> Interaction designer <br><br>
+        The aim of this course was to target a usabillity issue of a site that you
+        use frequently. Then come up with an idéa that will solve this problem.
+            <br><br></p>
+            <a href="https://docs.google.com/document/d/1LmbT7LPli_nQN82bYzz7gn-PgYM6CQrbNO6y5V8pzbQ/edit?usp=sharing">
+            <div class="readMore"><b>Read more...</b></div></a>
+        </div>
       </div>
     </div>
-  </div>
-  <!--===============================CV====================================== -->
-  <div class="cv" id="cv">
-    <a href="cv/CV-Matilda.pdf" download>
-            <img src="CV-1.png" alt="cv">
-    </a>
-    <h3>Press to view my Curriculum vitae</h3>
   </div>
   <!--============================CONTACT ME================================== -->
-  <div class="contactMe" id="contactMe">
-    <p><i>If you are interested in finding out more about me...</i></p>
-    <div class="row_2">
-      <div class="col_2_1">
-        <a href="mailto:matildanilsson4@hotmail.com">
+  <div class="contact" id="contact">
+    <h3>Contact</h3>
+    <a href="mailto:matildanilsson4@hotmail.com"><div id="mail">matildanilsson4@hotmail.com</div></a>
+    <a href="CV-Matilda.pdf" download> <div id="cv">CV</a>
+  </div>
+  <div class="row_2">
+    <div class="col_2">
+      <a href="mailto:matildanilsson4@hotmail.com">
             <img src="mail.svg" alt="Mail"></a>
-        <a href="mailto:matildanilsson4@hotmail.com">...send me an email</a>
-      </div>
-      <div class="col_2_2">
-        <a href="https://www.linkedin.com/in/matilda-nilsson-962248137/">
-            <img src="linkedin.svg" alt="Linkedin"></a>
-        <a href="https://www.linkedin.com/in/matilda-nilsson-962248137/">
-            ...connect with me on Linked In</a>
-      </div>
-      <div class="col_2_3">
-        <a href="https://www.instagram.com/matildaanilssons/">
-            <img src="Instagram.svg" alt="Instagram"></a>
-        <a href="https://www.instagram.com/matildaanilssons/">...follow me on Instagram</a>
-      </div>
+    </div>
+    <div class="col_2">
+      <a href="https://www.linkedin.com/in/matilda-nilsson-962248137/">
+                <img src="linkedin.svg" alt="Linkedin"></a>
+    </div>
+    <div class="col_2">
+      <a href="https://www.instagram.com/matildaanilssons/">
+                <img src="instagram.svg" alt="Instagram"></a>
     </div>
   </div>
-
+  </div>
+  </div>
 
   <!--============================SCRIPT================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
