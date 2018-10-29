@@ -121,12 +121,15 @@ body {
       display: flex;
       justify-content: space-around;
       flex-direction: row;
-      height: 500px;
+      height: 50px;
       width: auto;
+
+      display: -webkit-flex;
+      display: -webkit-box;
 
       .col_2 {
         justify-content: space-around;
-        width: 40px;
+        width: 35px;
         padding: 25px 40px;
       }
     }
