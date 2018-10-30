@@ -3,7 +3,7 @@
 //$font-body: 'Open Sans', sans-serif, "Roboto", "Arial";
 $font-body: 'Roboto Mono', monospace, "Roboto", "Arial";
 $font-handwrite: 'Roboto Slab', serif, "Roboto", "Arial";
-$primary-background-color: #000; //$primary-background-color: #000316;
+$primary-background-color: #000;
 $h-color: #FFF;
 $nav-text-color: #FFFFFF;
 $nav-hover-text-color: #878787;
@@ -12,272 +12,410 @@ $distance-between-cards: 40px;
 /*Media query*/
 $width-name: max-device-width;
 $target-width: 650px;
-
+/*================================= GENERAL =================================*/
 body {
-  /*================================= GENERAL =================================*/
   margin: 0;
   background-color: $primary-background-color;
-  /*Headings*/
-  h1,
-  h2,
-  h3 {
-    font-family: $font-handwrite;
-    color: $h-color;
-  }
+}
+/*Headings*/
+h1,
+h2,
+h3 {
+  font-family: $font-handwrite;
+  color: $h-color;
+}
+/*Primary text*/
+a,
+p {
+  font-family: $font-body;
+  //font-size: 1vw;
+  color: #FFF;
+  line-height: 1.5em;
+}
+/*================================ NAVMENY ================================ */
+.nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  justify-content: flex-end;
+  background: $primary-background-color;
 
-  h1 {
-    font-size: 3.5vw;
-  }
-
-  h2 {
-    font-size: 3vw;
-  }
-
-  h3 {
-    font-size: 2vw;
-  }
-  /*Primary text*/
-  p, a {
-    font-family: $font-body;
-    font-size: 1vw;
-    color: #FFF;
-    line-height: 1.5em;
-  }
-  /*================================ NAVMENY ================================ */
-  .nav {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    z-index: 5;
-    width: 100%;
-    justify-content: flex-end;
-    background: $primary-background-color;
-
-    & li {
-      list-style-type: none;
-      display: inline-block;
-      padding: 10px 35px 10px 25px;
-
-      & a {
-        color: $nav-text-color;
-        font-weight: bold;
-        text-decoration: none;
-
-        :hover {
-          border-bottom: 2px solid #FFF;
-        }
-      }
-
-
-    }
-  }
-  /*================================ STARTPAGE ================================*/
-  .startpage_card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* Introduction */
-    & .row_1 {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      margin-top: 75px;
-      width: 75%;
-      box-shadow: inset 0 0 0 1px #FFFFFF;
-
-      & img {
-        height: 40% !important;
-        width: 40% !important;
-        padding: 1px;
-      }
-
-      & .textbox {
-        display: flex;
-        flex-direction: column;
-        margin-left: 25px;
-        padding-right: 35px;
-        text-align: justify;
-
-        #hi {
-          color: #878787;
-        }
-
-        & h1 {
-          margin:0;
-        }
-
-        & p {
-          margin-top: 0;
-        }
-      }
-    }
-    /*Social icons*/
-    & .row_2 {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      height: 50px;
-      width: auto;
-      display: -webkit-flex;
-      display: -webkit-box;
-
-      & .col_2 {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 35px;
-        height: auto;
-        padding: 25px 40px;
-
-        & img {
-          height: 100%;
-          width: 100%;
-        }
-      }
-
-      :hover {
-        img {
-          opacity: 0.6;
-          filter: alpha(opacity=100);
-        }
-      }
-    }
-  }
-  /*================================ PROJECTS ================================*/
-  .projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
-    margin-bottom: 50px;
-
-    & .row {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      width: 70%;
-
-      & .card {
-        display: flex;
-        flex-direction: column;
-        box-shadow: inset 0 0 0 1px #FFF;
-        width: 40%;
-        height: auto;
-        margin: 15px;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 10px;
-        & img {
-          height: 90%;
-          width: 90%;
-        }
-
-        .hidden_text {
-          display: none;
-          width: 350px;
-          position: absolute;
-          text-align: center;
-
-          a {
-            color: #FFF;
-
-            .readMore {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-
-      #dbt {
-        margin-top: -150px;
-      }
-      :hover {
-        img {
-          opacity: 0.1;
-          filter: alpha(opacity=50);
-          transition: 0.3s;
-        }
-
-        .hidden_text {
-          display: block;
-        }
-
-        .readMore:hover  {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-  /*=============================== CONTACT ME ===============================*/
-  .contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4vw;
-    height: 200px;
-
-    #mail {
-      text-decoration: underline;
-      margin-bottom: 35px;
-      font-size: 1.5vw;
-    }
-
-    #mail:hover {
-      text-decoration: none;
-    }
+  & li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 35px 10px 25px;
 
     & a {
+      color: $nav-text-color;
+      font-weight: bold;
       text-decoration: none;
-      color: #FFF;
-    }
-
-    & #cv {
-      width: 80px;
-      background-color: none;
-      text-align: center;
-      margin: auto;
-      padding: 1rem;
-      transition: all 0.3s ease 0s;
-      box-shadow: inset 0 0 0 0.5px #FFFFFF;
-    }
-
-    #cv:hover {
-      box-shadow: inset 0 0 0 3px #FFFFFF;
-    }
-
-    & .row_2 {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      height: 50px;
-      width: auto;
-      margin-top: 20px;
-      margin-bottom: 30px;
-      display: -webkit-flex;
-      display: -webkit-box;
-
-      & .col_2 {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 35px;
-        padding: 25px 40px;
-
-        & img {
-          height: 100%;
-          width: 100%;
-        }
-      }
 
       :hover {
-        img {
-          opacity: 0.6;
-          filter: alpha(opacity=100);
+        border-bottom: 2px solid #FFF;
+      }
+    }
+  }
+}
+/*================================ STARTPAGE ================================*/
+.startpage_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* Introduction */
+  & .row_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 7vw;
+    width: 60vw;
+    box-shadow: inset 0 0 0 1px #FFFFFF;
+
+    & img {
+      height: 40%;
+      width: 40%;
+      padding: 1px;
+    }
+
+    & .textbox {
+      display: flex;
+      flex-direction: column;
+      margin-left: 2vw;
+      padding-right: 2vw;
+      text-align: justify;
+
+      #hi {
+        color: #878787;
+      }
+
+      & h1 {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      & p {
+        margin-top: 0px;
+      }
+    }
+  }
+  /*Social icons*/
+  & .row_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+    width: auto;
+    display: -webkit-flex;
+    display: -webkit-box;
+
+    & .col_2 {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 35px;
+      height: auto;
+      padding: 25px 40px;
+
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    :hover {
+      img {
+        opacity: 0.6;
+        filter: alpha(opacity=100);
+      }
+    }
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+
+      .textbox {
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 100vw;
+      }
+    }
+  }
+}
+/*================================ PROJECTS ================================*/
+#projects {
+  margin-top: 10vw;
+  text-align: center;
+  #touch{
+    display: none;
+  }
+}
+
+.projects {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: auto auto;
+  align-content: flex-start;
+  grid-gap: 2.5vw;
+  margin: 6vw 0;
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 0 1px #FFF;
+    width: 30vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1vw;
+
+    & img {
+      object-fit: contain;
+      height: 90%;
+      width: 90%;
+    }
+
+    .hidden_text {
+      display: none;
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      padding: 3vw;
+
+      a {
+        color: #FFF;
+
+        .readMore {
+          text-decoration: underline;
         }
       }
+    }
+  }
+
+  :hover {
+    img {
+      opacity: 0.1;
+      filter: alpha(opacity=50);
+      transition: 0.3s;
+    }
+
+    .hidden_text {
+      display: block;
+    }
+
+    .readMore:hover {
+      text-decoration: none;
+    }
+  }
+}
+/*=============================== CONTACT ME ===============================*/
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4vw;
+  height: 200px;
+
+  #mail {
+    text-decoration: underline;
+    margin-bottom: 35px;
+    font-size: 1.5vw;
+  }
+
+  #mail:hover {
+    text-decoration: none;
+  }
+
+  & a {
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  & #cv {
+    width: 80px;
+    background-color: none;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    transition: all 0.3s ease 0s;
+    box-shadow: inset 0 0 0 0.5px #FFFFFF;
+  }
+
+  #cv:hover {
+    box-shadow: inset 0 0 0 3px #FFFFFF;
+  }
+
+  & .row_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+    width: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: -webkit-flex;
+    display: -webkit-box;
+
+    & .col_2 {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 35px;
+      padding: 25px 40px;
+
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    :hover {
+      img {
+        opacity: 0.6;
+        filter: alpha(opacity=100);
+      }
+    }
+  }
+}
+/*=============================== RESPONSIVE ===============================*/
+@media screen and (max-width: 1200px) {
+  .nav {
+    font-size: 20px;
+    justify-content: center;
+
+    li {
+      padding: 5px 40px;
+    }
+  }
+
+  .startpage_card {
+    margin-bottom: 20vw;
+    .row_1 {
+      flex-direction: column;
+      width: 100vw;
+      box-shadow: inset 0 0 0 0 #000;
+
+      img {
+        width: 85%;
+      }
+
+      .textbox {
+        margin-top: 2vw;
+        align-items: center;
+        width: 85%;
+        font-size: 25px;
+
+        h1 {
+          padding: 26px 0;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .row_2 {
+      .col_2 {
+        height: 20vw;
+        width: 10vw;
+        margin: 5vw 5vw;
+      }
+    }
+  }
+
+  #projects {
+    padding-top: 10vw;
+    margin: 0;
+    font-size: 45px;
+
+    p {
+      font-size: 25px;
+    }
+    #touch{
+      display: block;
+    }
+  }
+
+  .projects {
+    grid-template-columns: auto;
+    height: auto;
+
+    .card {
+      width: 60vw;
+      height: 70vw;
+      box-shadow: inset 0 0 0 0 #000;
+    }
+  }
+
+  .contact {
+    height: auto;
+    padding: 10vw 0vw;
+
+    #mail,
+    h3 {
+      font-size: 25px;
+      margin: 5vw;
+    }
+
+    #cv {
+      margin: 5vw;
+      box-shadow: inset 0 0 0 0 #000;
+      border: 2px solid white;
+      padding: 20px;
+      font-size: 40px;
+    }
+
+    .row_2 {
+      .col_2 {
+        height: 20vw;
+        width: 10vw;
+        margin: 5vw 5vw;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav {
+    font-size: 20px;
+    justify-content: center;
+
+    li {
+      padding: 0px 25px;
+    }
+  }
+  .startpage_card {
+    .row_1 {
+      .textbox {
+        h1 {
+          width: 100%;
+          font-size: 25px;
+        }
+        p{
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  #projects{
+    h3{
+      font-size: 25px;
+    }
+    p{
+      font-size: 17px;
+    }
+  }
+  .contact{
+    h3{
+      margin-bottom: 10vw;
+    }
+    #cv{
+      font-size: 20px;
+      margin-top: 10vw;
     }
   }
 }
