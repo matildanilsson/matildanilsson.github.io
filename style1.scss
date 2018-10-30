@@ -1,17 +1,33 @@
 /* Matilda Nilsson, matildanilsson4@hotmail.com */
-/*Variabels*/
-//$font-body: 'Open Sans', sans-serif, "Roboto", "Arial";
 $font-body: 'Roboto Mono', monospace, "Roboto", "Arial";
 $font-handwrite: 'Roboto Slab', serif, "Roboto", "Arial";
-$primary-background-color: #000;
-$h-color: #FFF;
-$nav-text-color: #FFFFFF;
-$nav-hover-text-color: #878787;
+/*Colors*/
+$primary-background-color: #515151;
+$font-color: #FFF;
+$nav-text-color: #FFF;
+$hover-color: #000;
+/*Decorations*/
+$border-bottom: 2px solid #FFF;
+$box-border: inset 0 0 0 1px #FFFFFF;
+$box-border-hover: inset 0 0 0 4px #FFFFFF;
+$transition: 0.3s;
+/*Width*/
+$start-page-card: 60vw;
+$social-icons: 4vw;
+$cards: 30vw;
+$img-card: 85%;
 /*Distance*/
-$distance-between-cards: 40px;
+$between-objects: 1vw 1.5vw;
+$inside-cards: 1.5vw;
+$grid-gap: 2.5vw;
+$top: 7vw;
+$top-half: 3.5vw;
+$bottom: 2vw;
+
 /*Media query*/
-$width-name: max-device-width;
-$target-width: 650px;
+$mq-between-objects: 1vw 5vw;
+$mq-cards: 70vw;
+$mq-text: 60vw;
 /*================================= GENERAL =================================*/
 body {
   margin: 0;
@@ -22,15 +38,14 @@ h1,
 h2,
 h3 {
   font-family: $font-handwrite;
-  color: $h-color;
+  color: $font-color;
+  margin: 0;
 }
-/*Primary text*/
+
 a,
 p {
   font-family: $font-body;
-  //font-size: 1vw;
-  color: #FFF;
-  line-height: 1.5em;
+  color: $font-color;
 }
 /*================================ NAVMENY ================================ */
 .nav {
@@ -42,113 +57,81 @@ p {
   justify-content: flex-end;
   background: $primary-background-color;
 
-  & li {
+  li {
     list-style-type: none;
     display: inline-block;
-    padding: 10px 35px 10px 25px;
+    padding: $between-objects;
 
-    & a {
-      color: $nav-text-color;
+    a {
       font-weight: bold;
       text-decoration: none;
+    }
 
-      :hover {
-        border-bottom: 2px solid #FFF;
-      }
+    :hover {
+      border-bottom: $border-bottom;
     }
   }
 }
 /*================================ STARTPAGE ================================*/
 .startpage_card {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   /* Introduction */
-  & .row_1 {
+  .row_1 {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
-    margin-top: 7vw;
-    width: 60vw;
-    box-shadow: inset 0 0 0 1px #FFFFFF;
+    margin-top: $top;
+    width: $start-page-card;
+    box-shadow: $box-border;
 
-    & img {
+    img {
       height: 40%;
       width: 40%;
-      padding: 1px;
+      padding: $inside-cards;
     }
 
-    & .textbox {
+    .textbox {
       display: flex;
       flex-direction: column;
-      margin-left: 2vw;
-      padding-right: 2vw;
       text-align: justify;
+      padding-right: $inside-cards;
 
-      #hi {
+      #master {
+        text-align: left;
         color: #878787;
-      }
-
-      & h1 {
-        margin: 0;
-        margin-bottom: 10px;
-      }
-
-      & p {
-        margin-top: 0px;
       }
     }
   }
   /*Social icons*/
-  & .row_2 {
+  .row_2 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 50px;
-    width: auto;
-    display: -webkit-flex;
-    display: -webkit-box;
 
-    & .col_2 {
-      flex-direction: row;
-      justify-content: space-around;
-      width: 35px;
-      height: auto;
-      padding: 25px 40px;
+    .col_2 {
+      width: $social-icons;
+      margin: $between-objects;
 
-      & img {
-        height: 100%;
+      img {
         width: 100%;
       }
     }
 
-    :hover {
-      img {
-        opacity: 0.6;
-        filter: alpha(opacity=100);
-      }
-    }
-    @media screen and (max-width: 992px) {
-      flex-direction: column;
-
-      .textbox {
-        justify-content: center;
-        align-items: center;
-      }
-
-      img {
-        width: 100vw;
-      }
+    .col_2:hover {
+      transition: $transition;
+      border-bottom: $border-bottom;
     }
   }
 }
 /*================================ PROJECTS ================================*/
 #projects {
-  margin-top: 10vw;
   text-align: center;
-  #touch{
+  padding-top: $top;
+  h2{
+    text-decoration: underline;
+  }
+
+
+  #touch {
     display: none;
   }
 }
@@ -159,56 +142,57 @@ p {
   justify-items: center;
   grid-template-columns: auto auto;
   align-content: flex-start;
-  grid-gap: 2.5vw;
-  margin: 6vw 0;
+  grid-gap: $grid-gap;
+  padding-top: $top;
 
-  & .card {
+  .card {
     display: flex;
-    flex-direction: column;
-    box-shadow: inset 0 0 0 1px #FFF;
-    width: 30vw;
-    height: auto;
+    box-shadow: $box-border;
+    width: $cards;
+    height: auto; //??
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 1vw;
+    padding: $inside-cards;
 
-    & img {
+    img {
       object-fit: contain;
-      height: 90%;
-      width: 90%;
+      width: $img-card;
+      height: auto; //??
     }
 
     .hidden_text {
       display: none;
-      width: 100%;
+      width: 30vw;
       position: absolute;
-      text-align: center;
-      padding: 3vw;
+      text-align: justify;
 
       a {
-        color: #FFF;
-
         .readMore {
           text-decoration: underline;
+        }
+
+        :hover {
+          font-weight: bold;
+          transition: $transition;
         }
       }
     }
   }
-
+  #dbt{
+    img{
+      width: 60%;
+    }
+  }
   :hover {
     img {
       opacity: 0.1;
       filter: alpha(opacity=50);
-      transition: 0.3s;
+      transition: $transition;
     }
 
     .hidden_text {
       display: block;
-    }
-
-    .readMore:hover {
-      text-decoration: none;
     }
   }
 }
@@ -218,206 +202,178 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4vw;
-  height: 200px;
+  padding-top: $top;
+
+  h2{
+    text-decoration: underline;
+  }
 
   #mail {
     text-decoration: underline;
-    margin-bottom: 35px;
     font-size: 1.5vw;
   }
 
   #mail:hover {
     text-decoration: none;
+    transition: $transition;
   }
 
-  & a {
+  a {
     text-decoration: none;
-    color: #FFF;
+    padding-top: $top-half;
   }
 
-  & #cv {
-    width: 80px;
+  #cv {
     background-color: none;
-    text-align: center;
     margin: auto;
-    padding: 1rem;
-    transition: all 0.3s ease 0s;
-    box-shadow: inset 0 0 0 0.5px #FFFFFF;
+    padding: $inside-cards;
+    transition: $transition;
+    box-shadow: $box-border;
   }
 
   #cv:hover {
-    box-shadow: inset 0 0 0 3px #FFFFFF;
+    box-shadow: $box-border-hover;
   }
-
-  & .row_2 {
+  /*Social icons*/
+  .row_2 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 50px;
-    width: auto;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    display: -webkit-flex;
-    display: -webkit-box;
+    padding-top: $top-half;
+    padding-bottom: $bottom;
 
-    & .col_2 {
-      flex-direction: row;
-      justify-content: space-around;
-      width: 35px;
-      padding: 25px 40px;
+    .col_2 {
+      width: $social-icons;
+      margin: $between-objects;
 
-      & img {
-        height: 100%;
+      img {
         width: 100%;
       }
     }
 
-    :hover {
-      img {
-        opacity: 0.6;
-        filter: alpha(opacity=100);
-      }
+    .col_2:hover {
+      transition: $transition;
+      border-bottom: $border-bottom;
     }
   }
 }
 /*=============================== RESPONSIVE ===============================*/
 @media screen and (max-width: 1200px) {
   .nav {
-    font-size: 20px;
     justify-content: center;
 
     li {
-      padding: 5px 40px;
+      padding: $mq-between-objects;
     }
   }
 
   .startpage_card {
-    margin-bottom: 20vw;
+    padding-top: $top;
     .row_1 {
       flex-direction: column;
-      width: 100vw;
-      box-shadow: inset 0 0 0 0 #000;
+      width: $img-card;
 
-      img {
-        width: 85%;
+      img{
+        width: $img-card;
       }
 
       .textbox {
-        margin-top: 2vw;
         align-items: center;
-        width: 85%;
-        font-size: 25px;
-
-        h1 {
-          padding: 26px 0;
-        }
+        padding: $inside-cards;
 
         p {
           margin-bottom: 0;
         }
       }
     }
-
-    .row_2 {
-      .col_2 {
-        height: 20vw;
-        width: 10vw;
-        margin: 5vw 5vw;
-      }
-    }
   }
 
   #projects {
-    padding-top: 10vw;
     margin: 0;
-    font-size: 45px;
 
-    p {
-      font-size: 25px;
-    }
-    #touch{
+    #touch {
       display: block;
     }
   }
 
   .projects {
     grid-template-columns: auto;
-    height: auto;
 
     .card {
-      width: 60vw;
-      height: 70vw;
+      width: $mq-cards;
+
+      .hidden_text{
+        width: $mq-text;
+      }
+    }
+    #dbt{
+      img{
+        width: 60%;
+      }
     }
   }
 
   .contact {
-    height: 57vw;
-    width: 80vw;
-    padding: 5vw 5vw;
-    padding-bottom: 11vw;
-    margin: 3vw 3vw;
+    padding: $inside-cards;
     box-shadow: inset 0 0 0 1px #FFFFFF;
-
-    #mail,
-    h3 {
-      font-size: 45px;
-    }
+    margin: 7vw 7vw;
 
     #cv {
-      margin: 5vw;
-      box-shadow: inset 0 0 0 0 #000;
       border: 2px solid white;
-      padding: 2vw;
-      font-size: 40px;
     }
 
     .row_2 {
-      margin: 0vw;
+      margin: 0;
+
       .col_2 {
-        height: 20vw;
-        width: 10vw;
+        width: 8vw;
       }
     }
   }
 }
 @media screen and (max-width: 600px) {
   .nav {
-    font-size: 20px;
     justify-content: center;
 
     li {
-      padding: 0px 25px;
+      padding: 0 5vw;
     }
   }
+
   .startpage_card {
     .row_1 {
-      .textbox {
-        h1 {
-          width: 100%;
-          font-size: 25px;
-        }
-        p{
-          font-size: 17px;
-        }
+      width: 90vw;
+      padding: $inside-cards;
+    }
+  }
+  .projects{
+    width: 100vw;
+    height: auto;
+    .card{
+      width: 90vw;
+      height: 110vw;
+      img{
+        padding: $inside-cards;
+      }
+
+      .hidden_text{
+        width: 85vw;
+      }
+    }
+    #dbt{
+      img{
+        width: 60%;
       }
     }
   }
-  #projects{
-    h3{
-      font-size: 25px;
+  .contact {
+    h2{
+      margin-bottom: $top;
     }
-    p{
-      font-size: 17px;
-    }
-  }
-  .contact{
-    h3{
-      margin-bottom: 10vw;
+    #mail{
+        font-size: 17px;
+        margin-bottom: $top;
     }
     #cv{
-      font-size: 20px;
-      margin-top: 10vw;
+      margin-bottom: $top;
     }
   }
 }
