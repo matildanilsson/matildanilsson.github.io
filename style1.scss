@@ -353,28 +353,31 @@ p {
   }
 
   .contact {
-    height: auto;
-    padding: 10vw 0vw;
+    height: 57vw;
+    width: 80vw;
+    padding: 5vw 5vw;
+    padding-bottom: 11vw;
+    margin: 3vw 3vw;
+    box-shadow: inset 0 0 0 1px #FFFFFF;
 
     #mail,
     h3 {
-      font-size: 25px;
-      margin: 5vw;
+      font-size: 45px;
     }
 
     #cv {
       margin: 5vw;
       box-shadow: inset 0 0 0 0 #000;
       border: 2px solid white;
-      padding: 20px;
+      padding: 2vw;
       font-size: 40px;
     }
 
     .row_2 {
+      margin: 0vw;
       .col_2 {
         height: 20vw;
         width: 10vw;
-        margin: 5vw 5vw;
       }
     }
   }
