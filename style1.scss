@@ -240,7 +240,8 @@ p {
   }
 }
 /*=============================== RESPONSIVE ===============================*/
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px)
+and (-webkit-device-pixel-ratio : 3) {
   .nav {
     justify-content: center;
     padding: 0;
@@ -327,7 +328,8 @@ p {
     }
   }
 }
-@media screen and (max-width: 400pi) {
+@media screen and (max-width: 600px)
+and (-webkit-device-pixel-ratio : 3) {
   .nav {
     justify-content: center;
 
