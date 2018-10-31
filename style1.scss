@@ -9,25 +9,25 @@ $hover-color: #000;
 /*Decorations*/
 $border-bottom: 2px solid #FFF;
 $box-border: inset 0 0 0 1px #FFFFFF;
+$none-border: inset 0 0 0 0 #FFFFFF;
 $box-border-hover: inset 0 0 0 4px #FFFFFF;
 $transition: 0.3s;
 /*Width*/
 $start-page-card: 60vw;
 $social-icons: 4vw;
-$cards: 30vw;
+$cards: 35vw;
 $img-card: 85%;
 /*Distance*/
 $between-objects: 1vw 1.5vw;
-$inside-cards: 1.5vw;
+$inside-cards: 1.5vw 0;
 $grid-gap: 2.5vw;
 $top: 7vw;
 $top-half: 3.5vw;
 $bottom: 2vw;
-
 /*Media query*/
 $mq-between-objects: 1vw 5vw;
 $mq-cards: 70vw;
-$mq-text: 60vw;
+$mq-text: 95vw;
 /*================================= GENERAL =================================*/
 body {
   margin: 0;
@@ -51,10 +51,11 @@ p {
 .nav {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
   position: fixed;
   z-index: 5;
-  width: 100%;
-  justify-content: flex-end;
   background: $primary-background-color;
 
   li {
@@ -78,7 +79,7 @@ p {
   align-items: center;
   flex-direction: column;
   /* Introduction */
-  .row_1 {
+  .start_card {
     display: flex;
     align-items: center;
     margin-top: $top;
@@ -88,14 +89,14 @@ p {
     img {
       height: 40%;
       width: 40%;
-      padding: $inside-cards;
+      padding: 1.5vw;
     }
 
     .textbox {
       display: flex;
       flex-direction: column;
       text-align: justify;
-      padding-right: $inside-cards;
+      padding-right: 1.5vw;
 
       #master {
         text-align: left;
@@ -103,33 +104,15 @@ p {
       }
     }
   }
-  /*Social icons*/
-  .row_2 {
-    display: flex;
-
-    .col_2 {
-      width: $social-icons;
-      margin: $between-objects;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .col_2:hover {
-      transition: $transition;
-      border-bottom: $border-bottom;
-    }
-  }
 }
 /*================================ PROJECTS ================================*/
 #projects {
   text-align: center;
-  padding-top: $top;
-  h2{
+  padding-top: 10vw;
+
+  h2 {
     text-decoration: underline;
   }
-
 
   #touch {
     display: none;
@@ -153,7 +136,7 @@ p {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: $inside-cards;
+    padding: 1.5vw 0;
 
     img {
       object-fit: contain;
@@ -163,9 +146,9 @@ p {
 
     .hidden_text {
       display: none;
-      width: 30vw;
       position: absolute;
       text-align: justify;
+      padding: 0 1.5vw;
 
       a {
         .readMore {
@@ -179,11 +162,13 @@ p {
       }
     }
   }
-  #dbt{
-    img{
+
+  #dbt {
+    img {
       width: 60%;
     }
   }
+
   :hover {
     img {
       opacity: 0.1;
@@ -204,7 +189,7 @@ p {
   align-items: center;
   padding-top: $top;
 
-  h2{
+  h2 {
     text-decoration: underline;
   }
 
@@ -225,8 +210,7 @@ p {
 
   #cv {
     background-color: none;
-    margin: auto;
-    padding: $inside-cards;
+    padding: 1.5vw 5vw;
     transition: $transition;
     box-shadow: $box-border;
   }
@@ -259,35 +243,36 @@ p {
 @media screen and (max-width: 1200px) {
   .nav {
     justify-content: center;
+    padding: 0;
+
+    ul {
+      padding: 0;
+    }
 
     li {
       padding: $mq-between-objects;
+      font-size: 20px;
     }
   }
 
   .startpage_card {
-    padding-top: $top;
-    .row_1 {
+    .start_card {
       flex-direction: column;
-      width: $img-card;
-
-      img{
-        width: $img-card;
-      }
+      width: 100vw;
+      height: auto;
 
       .textbox {
         align-items: center;
-        padding: $inside-cards;
-
-        p {
-          margin-bottom: 0;
-        }
+        padding: 5vw;
       }
     }
   }
 
   #projects {
-    margin: 0;
+    h2 {
+      text-decoration: none;
+      font-size: 30px;
+    }
 
     #touch {
       display: block;
@@ -298,30 +283,43 @@ p {
     grid-template-columns: auto;
 
     .card {
-      width: $mq-cards;
+      box-shadow: $none-border;
+      border-bottom: $border-bottom;
+      width: 100vw;
+      height: auto;
+      padding: 5vw 0;
 
-      .hidden_text{
-        width: $mq-text;
+      img {
+        width: 50vw;
+        height: 40vw;
       }
-    }
-    #dbt{
-      img{
-        width: 60%;
+
+      .hidden_text {
+        width: 60vw;
       }
     }
   }
 
   .contact {
-    padding: $inside-cards;
-    box-shadow: inset 0 0 0 1px #FFFFFF;
-    margin: 7vw 7vw;
+    h2 {
+      text-decoration: none;
+      font-size: 30px;
+      padding: 4vw 0;
+    }
+
+    #mail {
+      font-size: 30px;
+      padding: 4vw 0;
+    }
 
     #cv {
       border: 2px solid white;
+      padding: 2vw;
     }
 
     .row_2 {
       margin: 0;
+      padding: 6vw 0vw;
 
       .col_2 {
         width: 8vw;
@@ -334,46 +332,47 @@ p {
     justify-content: center;
 
     li {
-      padding: 0 5vw;
+      font-size: 16px;
+      padding: 1vw 5vw;
     }
   }
 
   .startpage_card {
-    .row_1 {
-      width: 90vw;
-      padding: $inside-cards;
+    .start_card {
+      img {
+        width: 90vw;
+      }
     }
   }
-  .projects{
-    width: 100vw;
-    height: auto;
-    .card{
-      width: 90vw;
-      height: 110vw;
-      img{
+  #projects{
+    h2{
+      padding-top: 15vw;
+    }
+  }
+  .projects {
+    .card {
+      height: 90vw;
+      width: auto;
+      img {
         padding: $inside-cards;
+        width: 100vw;
       }
 
-      .hidden_text{
+      .hidden_text {
         width: 85vw;
-      }
-    }
-    #dbt{
-      img{
-        width: 60%;
       }
     }
   }
   .contact {
     h2{
-      margin-bottom: $top;
+      padding: 12vw 0;
     }
-    #mail{
-        font-size: 17px;
-        margin-bottom: $top;
+    #mail {
+      font-size: 17px;
+      padding: 12vw 0vw;
     }
-    #cv{
-      margin-bottom: $top;
+    .row_2{
+      padding: 12vw 0vw;
     }
   }
 }
